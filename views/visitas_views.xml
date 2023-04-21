@@ -5,4 +5,21 @@
         <field name="res_model">visita</field>
         <field name="view_mode">tree,form</field>
     </record>
+
+    <record id="visitas_view_tree" model="ir.ui.view">
+        <field name="name">visitas.tree</field>
+        <field name="model">visita</field>
+        <field name="arch" type="xml">
+            <tree string="Properties">
+                <field name="nombre_reserva"/>
+                <field name="fecha_entrada"/>
+                <field name="fecha_salida"/>
+                <field name="dni"/>
+                <field name="numero_telefono"/>
+                <field name="es_reserva"/>
+                <field name="habitacion"/>
+                <field name="persona_visitada"/>
+            </tree>
+        </field>
+    </record>
 </odoo>

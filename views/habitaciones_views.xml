@@ -5,4 +5,17 @@
         <field name="res_model">habitacion</field>
         <field name="view_mode">tree,form</field>
     </record>
+
+    <record id="habitacion_view_tree" model="ir.ui.view">
+        <field name="name">habitacion.tree</field>
+        <field name="model">habitacion</field>
+        <field name="arch" type="xml">
+            <tree string="Properties">
+                <field name="num_habitacion"/>
+                <field name="precio"/>
+                <field name="num_adultos"/>
+                <field name="num_ninos"/>
+            </tree>
+        </field>
+    </record>
 </odoo>
