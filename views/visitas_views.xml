@@ -6,3 +6,13 @@
         <field name="view_mode">tree,form</field>
     </record>
 </odoo>
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="reserva_menu_root" name="Reservas">
+        <menuitem id="reservas_advertisement_menu" name="Reservas">
+            <menuitem id="reservas_menu_action" action="reservas_action"/>
+        </menuitem>
+    </menuitem>
+</odoo>
