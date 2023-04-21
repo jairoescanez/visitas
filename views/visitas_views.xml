@@ -1,18 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id= "reserva_action" model="ir.actions.act_window">
-        <field name="name">Visita</field>
+    <record id= "visita_action" model="ir.actions.act_window">
+        <field name="name">Visitas</field>
         <field name="res_model">visita</field>
         <field name="view_mode">tree,form</field>
     </record>
-</odoo>
-
-
-<?xml version="1.0" encoding="utf-8"?>
-<odoo>
-    <menuitem id="reserva_menu_root" name="Reservas">
-        <menuitem id="reservas_advertisement_menu" name="Reservas">
-            <menuitem id="reservas_menu_action" action="reservas_action"/>
-        </menuitem>
-    </menuitem>
 </odoo>

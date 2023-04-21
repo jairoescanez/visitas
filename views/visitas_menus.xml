@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="visita_menu_root" name="Visitas"/>
+    
+    <menuitem id="visita_menu" name="Reservas" parent="visita_menu_root"/>
+    <menuitem id="visita_menu_action" action="visita_action" parent="visita_menu"/>
+    <menuitem id="habitacion_menu_action" action="habitacion_action" parent="visita_menu"/>
+</odoo>

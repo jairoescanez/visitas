@@ -9,8 +9,10 @@
     """,
     # data files always loaded at installation
     'data': [
+        'security/ir.model.access.csv',
         'views/visitas_views.xml',
-        'security\ir.model.access.csv'
+        'views/habitaciones_views.xml',
+        'views/visitas_menus.xml'
     ],
     # data files containing optionally loaded demonstration data
     'demo': [
