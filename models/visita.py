@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
-from odoo import fields, models
+from odoo import fields, models, api
 from datetime import datetime
+from odoo.exceptions import ValidationError
 
 class Visita(models.Model):
     _name = "visita"
@@ -14,3 +15,9 @@ class Visita(models.Model):
     es_reserva = fields.Boolean(required=True, default=False)
     habitacion = fields.Many2one(required=True, comodel_name="habitacion")
     persona_visitada = fields.Char()
+
+    @api.constrains("fecha_entrada","fecha_salida")
+    def _check_fecha_entrada_anterior_fecha_salida(self):
+        for p in self:
+            if (p.fecha_entrada > p.fecha_salida):
+                raise ValidationError("La fecha de entrada debe ser anterior a la fecha de salida")
