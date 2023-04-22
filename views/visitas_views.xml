@@ -17,19 +17,61 @@
                 <field name="dni"/>
                 <field name="numero_telefono"/>
                 <field name="es_reserva"/>
-                <field name="habitacion"/>
-                <field name="persona_visitada"/>
+                <field name="habitacion" attrs="{'invisible' : [('es_reserva', '=', False)]}"/>
+                <field name="persona_visitada" attrs="{'invisible' : [('es_reserva', '=', True)]}"/>
             </tree>
         </field>
     </record>
 
+    <record id="visitas_view_form" model="ir.ui.view">
+        <field name="name">visitas.form</field>
+        <field name="model">visita</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="nombre_reserva"/>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="fecha_entrada"/>
+                        </group>
+                        <group>
+                            <field name="fecha_salida"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="dni"/>
+                        </group>
+                        <group>
+                            <field name="numero_telefono"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Tipo de visita">
+                            <group col="3">
+                                <group>
+                                    <field name="es_reserva"/>
+                                </group>
+                                <group colspan="2">
+                                    <field name="habitacion" attrs="{'invisible' : [('es_reserva', '=', False)]}"/>
+                                    <field name="persona_visitada" attrs="{'invisible' : [('es_reserva', '=', True)]}"/>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
 
-    <!-- <record id="visita_calendario_action" model="ir.actions.act_window">
-        <field name="name">Calendario de mi tabla</field>
+    <record id="calendario_action" model="ir.actions.act_window">
+        <field name="name">Calendario</field>
         <field name="res_model">visita</field>
         <field name="view_mode">calendar,tree,form</field>
         <field name="context">{'search_default_today': 1, 'group_by': 'fecha'}</field>
-    </record> -->
+    </record>
 
 
     <data>
@@ -38,7 +80,7 @@
             <field name="model">visita</field>
             <field name="arch" type="xml">
                 <calendar string="Calendario" date_start="fecha_entrada" date_stop="fecha_salida">
-                    <field name="habitacion"/>
+                    <field name="nombre_reserva"/>
                 </calendar>
             </field>
         </record>

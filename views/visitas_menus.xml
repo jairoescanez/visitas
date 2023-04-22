@@ -6,6 +6,6 @@
     <menuitem id="visita_menu_action" action="visita_action" parent="visita_menu"/>
     <menuitem id="habitacion_menu_action" action="habitacion_action" parent="visita_menu"/>
 
-    <!-- <menuitem id="visita_calendario" name="Calendario" parent="visita_menu_root"/>
-    <menuitem id="visita_calendario_actionn" action="visita_calendario_action" parent="visita_calendario"/> -->
+    <menuitem id="calendario_menu" name="Calendario" parent="visita_menu_root"/>
+    <menuitem id="calendario_menu_action" action="calendario_action" parent="calendario_menu"/>
 </odoo>
