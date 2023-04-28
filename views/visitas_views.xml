@@ -79,8 +79,13 @@
             <field name="name">visitas.calendar</field>
             <field name="model">visita</field>
             <field name="arch" type="xml">
-                <calendar string="Calendario" date_start="fecha_entrada" date_stop="fecha_salida">
-                    <field name="nombre_reserva"/>
+                <calendar string="Calendario" date_start="fecha_entrada" date_stop="fecha_salida" form_view_id="visitas_view_form"
+                mode="month" event_open_popup="true" create_name_field="nombre_reserva" color="es_reserva">
+                    <field name="dni"/>
+                    <field name="numero_telefono"/>
+                    <field name="es_reserva" invisible="1"/>
+                    <field name="habitacion" attrs="{'invisible' : [('es_reserva', '=', False)]}"/>
+                    <field name="persona_visitada" attrs="{'invisible' : [('es_reserva', '=', True)]}"/>
                 </calendar>
             </field>
         </record>

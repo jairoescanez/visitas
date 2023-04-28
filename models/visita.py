@@ -23,8 +23,8 @@ class Visita(models.Model):
                 raise ValidationError("La fecha de entrada debe ser anterior a la fecha de salida")
 
     @api.onchange("es_reserva")
-    def onchange(self):
-        if self.es_reserva == True:
-            self.persona_visitada = None
-        else:
-            self.habitacion = None
+    def _onchange_reserva(self):
+            if self.es_reserva == True:
+                self.persona_visitada = None
+            else:
+                self.habitacion = None
